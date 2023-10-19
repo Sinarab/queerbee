@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk6coaub2appq"]
+
+[ext_resource type="PackedScene" uid="uid://cl1exah3vb6x1" path="res://src/user_interface/title.tscn" id="1_bsgea"]
+[ext_resource type="Theme" uid="uid://bheuenbl3wl31" path="res://assets/theme/main_theme.tres" id="1_u0dsj"]
+[ext_resource type="PackedScene" uid="uid://dec0l5uxadafl" path="res://src/user_interface/play_button.tscn" id="2_3lfrf"]
+[ext_resource type="PackedScene" uid="uid://cfj886k8amhmc" path="res://src/user_interface/quit_button.tscn" id="3_blpap"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u0dsj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.482353, 0.568627, 0.745098, 1)
+
+[node name="title" parent="." instance=ExtResource("1_bsgea")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -88.0
+offset_bottom = -62.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = 1.0
+offset_right = 123.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" parent="VBoxContainer" instance=ExtResource("2_3lfrf")]
+layout_mode = 2
+next_scene_path = "res://src/levels/main_level.tscn"
+
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource("3_blpap")]
+layout_mode = 2

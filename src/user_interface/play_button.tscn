@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dec0l5uxadafl"]
+
+[ext_resource type="Script" path="res://src/user_interface/play_button_controller.gd" id="1_77682"]
+
+[node name="PlayButton" type="Button"]
+offset_right = 160.0
+offset_bottom = 60.0
+size_flags_vertical = 3
+text = "Play"
+script = ExtResource("1_77682")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

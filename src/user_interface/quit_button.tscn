@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfj886k8amhmc"]
+
+[ext_resource type="Script" path="res://src/user_interface/quit_button_controller.gd" id="1_1hfig"]
+
+[node name="QuitButton" type="Button"]
+offset_right = 160.0
+offset_bottom = 60.0
+size_flags_vertical = 3
+text = "Sair"
+script = ExtResource("1_1hfig")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

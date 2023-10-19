@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bheuenbl3wl31"]
+
+[ext_resource type="FontFile" uid="uid://bo0k8ddamdco5" path="res://assets/fonts/rainyhearts.ttf" id="1_nu65t"]
+[ext_resource type="StyleBox" uid="uid://cid5cdw7v4f2j" path="res://assets/theme/button_style_box_empty.tres" id="1_u05vo"]
+
+[resource]
+default_font = ExtResource("1_nu65t")
+default_font_size = 24
+Button/font_sizes/font_size = 28
+Button/styles/normal = ExtResource("1_u05vo")
+Label/font_sizes/font_size = 32
