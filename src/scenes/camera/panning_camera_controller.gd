@@ -12,13 +12,14 @@ func _physics_process(delta) -> void:
 	set_physics_process(not is_equal_approx(zoom.x, zoom.y))
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				zoom_in()
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				zoom_out()
-		if event.button_mask == MOUSE_BUTTON_MASK_MIDDLE:
+	if event is InputEventMouseMotion:
+		if event.button_mask == MOUSE_BUTTON_MASK_MIDDLE or event.button_mask == MOUSE_BUTTON_RIGHT:
 			position -= event.relative * zoom
 
 func zoom_in() -> void:

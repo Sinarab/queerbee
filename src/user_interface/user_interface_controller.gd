@@ -65,11 +65,24 @@ func _on_show_bee_actions_menu_pressed(bee_type):
 			actions_select.add_icon_item(bloc_nature, "Nature", 3)
 			actions_select.add_icon_item(bloc_life, "Life", 4)
 
-
-
 func _on_actions_selection_button_item_selected(index):
 	var actions_select: OptionButton = get_node("ActionMenu/ActionsSelectionButton")
 	var item_id = actions_select.get_item_id(index)
+	if item_id == -1:
+		var bloc = Bloc.create_new_bloc("the_sun")
+		PlayerData.add_bloc(bloc)
+	if item_id == 0:
+		var bloc = Bloc.create_new_bloc("serenity")
+		PlayerData.add_bloc(bloc)
+	if item_id == 1:
+		var bloc = Bloc.create_new_bloc("healing")
+		PlayerData.add_bloc(bloc)
+	if item_id == 2:
+		var bloc = Bloc.create_new_bloc("the_sprit")
+		PlayerData.add_bloc(bloc)
+	if item_id == 3:
+		var bloc = Bloc.create_new_bloc("nature")
+		PlayerData.add_bloc(bloc)
 	if item_id == 4:
 		var bloc = Bloc.create_new_bloc("life")
 		PlayerData.add_bloc(bloc)

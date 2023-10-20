@@ -1,2 +1,9 @@
-res://src/user_interface/user_interface.tscn
+res://src/tile_map/tile_map.tscn
 res://assets/theme/main_theme.tres
+res://src/levels/main_level.tscn
+res://src/autoload/player_data.tscn
+res://src/scenes/bloc.tscn
+res://src/tile_map/tile_map_controller.gd
+res://src/levels/main_level_controller.gd
+res://src/scenes/bloc_controller.gd
+res://src/autoload/player_data_controller.gd

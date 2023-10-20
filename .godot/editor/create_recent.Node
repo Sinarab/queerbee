@@ -1,6 +1,7 @@
-OptionButton
-Control
+HBoxContainer
 Button
+Control
+OptionButton
 Camera2D
 ColorRect
 CollisionPolygon2D

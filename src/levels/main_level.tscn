@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmovy5uof3o8w"]
+[gd_scene load_steps=6 format=3 uid="uid://cmovy5uof3o8w"]
 
 [ext_resource type="PackedScene" uid="uid://be0i26c7y26id" path="res://src/user_interface/user_interface.tscn" id="1_4fq1l"]
 [ext_resource type="Script" path="res://src/levels/main_level_controller.gd" id="1_4mg7x"]
 [ext_resource type="PackedScene" uid="uid://bhmv54uhkopg7" path="res://src/tile_map/tile_map.tscn" id="2_6g5fn"]
 [ext_resource type="PackedScene" uid="uid://dmytu7y5igj6b" path="res://src/scenes/camera/panning_camera.tscn" id="3_3ap0j"]
+[ext_resource type="PackedScene" uid="uid://b1o48cssgwhvc" path="res://src/scenes/bloc.tscn" id="5_6jtde"]
 
 [node name="main_level" type="Node2D"]
 script = ExtResource("1_4mg7x")
@@ -11,63 +12,12 @@ script = ExtResource("1_4mg7x")
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="ColorRect" type="ColorRect" parent="UserInterface"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 96.0
-grow_horizontal = 2
-color = Color(0.584314, 0.337255, 0.129412, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="UserInterface"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -120.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.584314, 0.337255, 0.129412, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="UserInterface"]
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_top = 96.0
-offset_right = 24.0
-offset_bottom = -120.0
-grow_vertical = 2
-color = Color(0.584314, 0.337255, 0.129412, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="UserInterface"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -228.0
-offset_bottom = 204.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.584314, 0.337255, 0.129412, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="UserInterface"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1096.0
-offset_top = -300.0
-offset_right = -936.0
-offset_bottom = -208.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(1, 1.03959)
-color = Color(0.584314, 0.337255, 0.129412, 1)
-
 [node name="UserInterface" parent="UserInterface" instance=ExtResource("1_4fq1l")]
 
 [node name="TileMap" parent="." instance=ExtResource("2_6g5fn")]
 scale = Vector2(1.01016, 1)
 
 [node name="Camera2D" parent="." instance=ExtResource("3_3ap0j")]
+
+[node name="Bloc" parent="." instance=ExtResource("5_6jtde")]
+position = Vector2(586, 316)

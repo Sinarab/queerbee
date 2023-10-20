@@ -7,6 +7,7 @@ class_name Bloc
 # connections: 0 - 6
 # connected_with: [...blocs]
 #----------
+const BLOCS_TYPES = ["life", "healing", "the_sun", "nature", "serenity", "the_sprit"]
 
 var type: String
 var status: String
