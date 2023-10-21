@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmovy5uof3o8w"]
+[gd_scene load_steps=7 format=3 uid="uid://cmovy5uof3o8w"]
 
 [ext_resource type="PackedScene" uid="uid://be0i26c7y26id" path="res://src/user_interface/user_interface.tscn" id="1_4fq1l"]
 [ext_resource type="Script" path="res://src/levels/main_level_controller.gd" id="1_4mg7x"]
 [ext_resource type="PackedScene" uid="uid://bhmv54uhkopg7" path="res://src/tile_map/tile_map.tscn" id="2_6g5fn"]
 [ext_resource type="PackedScene" uid="uid://dmytu7y5igj6b" path="res://src/scenes/camera/panning_camera.tscn" id="3_3ap0j"]
+[ext_resource type="Texture2D" uid="uid://dr0cwtc7bl6df" path="res://assets/hud/actions_bee_menu.png" id="5_4cksr"]
 [ext_resource type="PackedScene" uid="uid://dt22gjq57kfik" path="res://src/scenes/bee.tscn.tscn" id="6_cwdss"]
 
 [node name="main_level" type="Node2D"]
@@ -25,6 +26,30 @@ layer = 100
 [node name="BeesLayer" type="CanvasLayer" parent="."]
 layer = 101
 
+[node name="Control" type="Control" parent="BeesLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="BeesLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -199.0
+offset_right = 10.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_4cksr")
+expand_mode = 1
+
 [node name="bee_tscn" parent="BeesLayer" instance=ExtResource("6_cwdss")]
-position = Vector2(1070, 93)
+position = Vector2(1065, 548)
 scale = Vector2(0.8, 0.8)

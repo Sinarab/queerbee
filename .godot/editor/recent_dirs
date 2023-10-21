@@ -1,6 +1,8 @@
+res://assets/intro
+res://src/levels/game_intro
 res://src/levels
-res://assets/blocs
 res://src/scripts
+res://assets/blocs
 res://assets/theme
 res://src/user_interface
 res://assets/bees

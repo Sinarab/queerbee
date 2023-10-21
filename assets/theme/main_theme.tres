@@ -14,7 +14,7 @@
 
 [resource]
 default_font = ExtResource("1_nu65t")
-default_font_size = 24
+default_font_size = 32
 Button/font_sizes/font_size = 28
 Button/styles/disabled = SubResource("StyleBoxEmpty_5x6h3")
 Button/styles/focus = SubResource("StyleBoxEmpty_l5moj")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfxjscj8h2v5g"]
+
+[ext_resource type="Theme" uid="uid://bheuenbl3wl31" path="res://assets/theme/main_theme.tres" id="1_s01as"]
+[ext_resource type="Script" path="res://src/levels/game_intro/animated_text_controller.gd" id="2_hh2yy"]
+
+[node name="AnimatedText" type="RichTextLabel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -215.0
+offset_right = 328.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_s01as")
+text = "Tired of the oppression of the tyrant Queen Bee of their old hive, the possibility of a new start and a new form of society led them to a quest to build a new home for all bees."
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_hh2yy")
+
+[node name="TypingTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="TypingTimer" to="." method="_on_typing_timer_timeout"]

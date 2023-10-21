@@ -24,3 +24,8 @@ res://src/autoload/player_data_controller.gd
 res://src/scripts/enemy.gd
 res://src/scripts/bloc.gd
 res://src/levels/game_intro.tscn
+res://src/levels/game_intro/game_intro.tscn
+res://src/levels/game_intro/animated_text.tscn
+res://src/levels/game_intro/animated_text_controller.gd
+res://src/levels/game_intro/game_intro_controller.gd
+res://src/levels/main_screen.tscn

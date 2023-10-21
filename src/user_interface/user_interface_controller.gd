@@ -33,15 +33,15 @@ func _ready():
 	update_interface_union()
 
 func update_interface_blocs() -> void:
-	blocs_label.text = "%s Blocos" % str(PlayerData.total_number_of_blocs)
-	resource_label.text = "%s" % str(PlayerData.total_number_of_resources)
+	blocs_label.text = str(PlayerData.total_number_of_blocs)
+	resource_label.text = str(PlayerData.total_number_of_resources)
 	
 func update_interface_union() -> void:
 	unio_progress_bar.value = PlayerData.union
 	union_label.text = str(PlayerData.union) + "%"
 
 func update_interface_bees() -> void:
-	bees_label.text = "%s Bees" % str(PlayerData.total_number_of_bees)
+	bees_label.text = str(PlayerData.total_number_of_bees)
 	bee_life_label1.text = "3/3"
 	bee_life_label2.text = "3/3"
 

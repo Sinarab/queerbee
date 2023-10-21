@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://be0i26c7y26id"]
+[gd_scene load_steps=14 format=3 uid="uid://be0i26c7y26id"]
 
 [ext_resource type="Theme" uid="uid://bheuenbl3wl31" path="res://assets/theme/main_theme.tres" id="1_l0vu2"]
 [ext_resource type="Script" path="res://src/user_interface/user_interface_controller.gd" id="2_anua5"]
+[ext_resource type="Texture2D" uid="uid://dyk1vwksmwah7" path="res://assets/hud/100_union.png" id="3_5dvjw"]
+[ext_resource type="Texture2D" uid="uid://djik1n6qcocxh" path="res://assets/hud/resources.png" id="4_vsu7h"]
+[ext_resource type="Texture2D" uid="uid://cgaaxdtxm0wci" path="res://assets/hud/status_metas.png" id="5_pmug0"]
+[ext_resource type="Texture2D" uid="uid://cxjho72py305e" path="res://assets/hud/spider_bar.png" id="6_whjh8"]
+[ext_resource type="Texture2D" uid="uid://bjm7r1em2u1n0" path="res://assets/hud/available_menus.png" id="7_w3vn0"]
+[ext_resource type="Texture2D" uid="uid://cfmsnwc5t2uqr" path="res://assets/mini_bees/AbelhaPeqLGBT.png" id="8_filme"]
+[ext_resource type="Texture2D" uid="uid://cm61qybvchyxe" path="res://assets/mini_bees/AbelhaPeqBi.png" id="9_o7rt2"]
+[ext_resource type="Texture2D" uid="uid://d3ayw13lea4ss" path="res://assets/mini_bees/AbelhaPeqTrans.png" id="10_cejyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tabo7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1tm3"]
+bg_color = Color(1, 0.929412, 0.764706, 0.835294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkcm7"]
+bg_color = Color(0.466667, 0.113725, 0.113725, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -13,32 +29,8 @@ grow_vertical = 2
 theme = ExtResource("1_l0vu2")
 script = ExtResource("2_anua5")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -211.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.729412, 0.509804, 0.137255, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -184.0
-offset_top = 24.0
-offset_right = -24.0
-offset_bottom = -24.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(0.631373, 0.439216, 0.109804, 1)
-
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,23 +39,41 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[node name="100Union" type="Sprite2D" parent="."]
+position = Vector2(132, 348)
+texture = ExtResource("3_5dvjw")
+
+[node name="Resources" type="Sprite2D" parent="."]
+position = Vector2(108, 193.5)
+texture = ExtResource("4_vsu7h")
+
+[node name="StatusMetas" type="Sprite2D" parent="."]
+position = Vector2(116, 80)
+texture = ExtResource("5_pmug0")
+
 [node name="BlocsLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 85.0
-offset_top = 30.0
-offset_right = 215.0
-offset_bottom = 63.0
-text = "%s Bloc"
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "%s"
+horizontal_alignment = 1
 
 [node name="BeesLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 85.0
-offset_top = 76.0
-offset_right = 213.0
-offset_bottom = 109.0
-text = "%s Bee"
+offset_left = 112.0
+offset_top = 96.0
+offset_right = 160.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+text = "%s"
+horizontal_alignment = 1
 
 [node name="ResourceLabel" type="Label" parent="."]
 layout_mode = 1
@@ -72,65 +82,46 @@ anchor_left = 0.109
 anchor_top = 0.113
 anchor_right = 0.109
 anchor_bottom = 0.113
-offset_left = -40.568
-offset_top = 489.776
-offset_right = 87.432
-offset_bottom = 522.776
-text = "%s"
-
-[node name="SpiderTimerLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_top = 30.0
-offset_right = 64.0
-offset_bottom = 63.0
-grow_horizontal = 2
+offset_left = -37.568
+offset_top = 102.776
+offset_right = 9.43201
+offset_bottom = 145.776
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
 text = "%s"
 horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="UnionLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_top = 535.0
-offset_right = 64.0
-offset_bottom = 568.0
-grow_horizontal = 2
-text = "%s"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SpiderTimerProgressBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -121.5
-offset_top = 60.0
-offset_right = 121.5
-offset_bottom = 80.0
-grow_horizontal = 2
-max_value = 300.0
-step = 0.1
-show_percentage = false
 
 [node name="UnioProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -121.5
-offset_top = 569.0
-offset_right = 121.5
-offset_bottom = 589.0
+offset_left = -476.0
+offset_top = 422.0
+offset_right = -327.0
+offset_bottom = 447.0
 grow_horizontal = 2
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxEmpty_tabo7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d1tm3")
+value = 50.0
 show_percentage = false
+
+[node name="UnionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -482.0
+offset_top = 434.0
+offset_right = -444.0
+offset_bottom = 467.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.984314, 0.764706, 0.282353, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 visible = false
@@ -166,6 +157,72 @@ text = "rainbow"
 
 [node name="ActionsSelectionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="SpiderBar" type="Sprite2D" parent="."]
+position = Vector2(576, 62)
+texture = ExtResource("6_whjh8")
+
+[node name="SpiderTimerProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 58.0
+offset_right = 194.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_hkcm7")
+max_value = 300.0
+step = 0.1
+value = 250.0
+show_percentage = false
+
+[node name="SpiderTimerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.0
+offset_top = 56.0
+offset_right = -124.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AvailableMenus" type="Sprite2D" parent="."]
+position = Vector2(1076.5, 174.012)
+scale = Vector2(1.5125, 1.5125)
+texture = ExtResource("7_w3vn0")
+
+[node name="AvailableMenus2" type="Sprite2D" parent="."]
+position = Vector2(1076.5, 283.3)
+scale = Vector2(1.5125, 1.5125)
+texture = ExtResource("7_w3vn0")
+
+[node name="AvailableMenus3" type="Sprite2D" parent="."]
+position = Vector2(1076.5, 393.3)
+scale = Vector2(1.5125, 1.5125)
+texture = ExtResource("7_w3vn0")
+
+[node name="AbelhaPeqLgbt" type="Sprite2D" parent="."]
+position = Vector2(1077, 169.3)
+scale = Vector2(1.76293, 1.76293)
+texture = ExtResource("8_filme")
+
+[node name="AbelhaPeqBi" type="Sprite2D" parent="."]
+position = Vector2(1077, 287.3)
+scale = Vector2(1.763, 1.763)
+texture = ExtResource("9_o7rt2")
+
+[node name="AbelhaPeqTrans" type="Sprite2D" parent="."]
+position = Vector2(1079, 393.3)
+scale = Vector2(1.763, 1.763)
+texture = ExtResource("10_cejyc")
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/ShowBeeActionsMenu" to="." method="_on_show_bee_actions_menu_pressed" binds= ["rainbow"]]
 [connection signal="item_selected" from="ScrollContainer/VBoxContainer/ActionsSelectionButton" to="." method="_on_actions_selection_button_item_selected"]
