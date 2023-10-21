@@ -1,11 +1,14 @@
 extends Camera2D
 
-const MIN_ZOOM: = 0.3
+const MIN_ZOOM: = 0.5
 const MAX_ZOOM: = 1.0
 const ZOOM_RATE: = 8.0
 const ZOOM_INCREMENT = 0.1
 
 var _target_zoom: = 1.0
+
+func _ready():
+	zoom = Vector2(0.7, 0.7)
 
 func _physics_process(delta) -> void:
 	zoom = lerp(zoom, _target_zoom * Vector2.ONE, ZOOM_RATE * delta)

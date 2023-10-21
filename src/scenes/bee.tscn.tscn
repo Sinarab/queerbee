@@ -1,0 +1,170 @@
+[gd_scene load_steps=11 format=3 uid="uid://dt22gjq57kfik"]
+
+[ext_resource type="PackedScene" uid="uid://ofhbaptnkum3" path="res://assets/bees/flying_bee.tscn" id="1_dtc36"]
+[ext_resource type="Script" path="res://src/scenes/bee_controller.tscn.gd" id="1_sd16d"]
+[ext_resource type="Theme" uid="uid://bheuenbl3wl31" path="res://assets/theme/main_theme.tres" id="2_kb1ru"]
+[ext_resource type="Texture2D" uid="uid://dd4tyj4aoxp4k" path="res://assets/blocs/bloco_amarelo.png" id="3_ifkt8"]
+[ext_resource type="Script" path="res://src/scripts/bloc_button_action_controller.gd" id="4_ime6j"]
+[ext_resource type="Texture2D" uid="uid://6wmega5bjivs" path="res://assets/blocs/bloco_laranja.png" id="5_6o14p"]
+[ext_resource type="Texture2D" uid="uid://b5gj757rhxnjm" path="res://assets/blocs/bloco_verde.png" id="5_d8wdg"]
+[ext_resource type="Texture2D" uid="uid://ccnjnclg30pcw" path="res://assets/blocs/bloco_roxo.png" id="7_gq206"]
+[ext_resource type="Texture2D" uid="uid://dexqeb7wdv80g" path="res://assets/blocs/bloco_vermelho.png" id="8_3cji2"]
+[ext_resource type="Texture2D" uid="uid://cnn037rub1u2u" path="res://assets/blocs/bloco_azul.png" id="9_lvnxm"]
+
+[node name="bee_tscn" type="Node2D"]
+position = Vector2(488, 52)
+script = ExtResource("1_sd16d")
+
+[node name="ButtonsMenuControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -448.0
+offset_top = 12.0
+offset_right = -48.0
+offset_bottom = 92.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.929412, 0.85098, 0.803922, 0.164706)
+metadata/_edit_use_anchors_ = true
+
+[node name="BlocButtonActionTheSun" type="TextureButton" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -31.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_ifkt8")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_ime6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlocButtonActionNature" type="TextureButton" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -31.0
+offset_right = -358.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_d8wdg")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_ime6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlocButtonActionHealing" type="TextureButton" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -31.0
+offset_right = -214.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_6o14p")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_ime6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlocButtonActionTheSprit" type="TextureButton" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -31.0
+offset_right = -286.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("7_gq206")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_ime6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlocButtonActionLife" type="TextureButton" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -31.0
+offset_right = -142.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_3cji2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_ime6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlocButtonActionSerenity" type="TextureButton" parent="ButtonsMenuControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -31.0
+offset_right = -70.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("9_lvnxm")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_ime6j")
+metadata/_edit_use_anchors_ = true
+
+[node name="FlyingBee" parent="." instance=ExtResource("1_dtc36")]
+position = Vector2(11.5, 14.5)
+
+[node name="ShowBeeActionsButton" type="Button" parent="."]
+offset_left = -40.5
+offset_top = -49.5
+offset_right = 51.5
+offset_bottom = 78.5
+theme = ExtResource("2_kb1ru")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ButtonsMenuControl/BlocButtonActionTheSun" to="ButtonsMenuControl/BlocButtonActionTheSun" method="_on_bloc_the_sun_pressed" binds= ["the_sun"]]
+[connection signal="pressed" from="ButtonsMenuControl/BlocButtonActionNature" to="ButtonsMenuControl/BlocButtonActionNature" method="_on_bloc_the_nature_pressed" binds= ["nature"]]
+[connection signal="pressed" from="ButtonsMenuControl/BlocButtonActionHealing" to="ButtonsMenuControl/BlocButtonActionHealing" method="_on_bloc_healing_pressed" binds= ["healing"]]
+[connection signal="pressed" from="ButtonsMenuControl/BlocButtonActionTheSprit" to="ButtonsMenuControl/BlocButtonActionTheSprit" method="_on_bloc_the_sprit_pressed" binds= ["the_sprit"]]
+[connection signal="pressed" from="ButtonsMenuControl/BlocButtonActionLife" to="ButtonsMenuControl/BlocButtonActionLife" method="_on_bloc_life_pressed" binds= ["life"]]
+[connection signal="pressed" from="ButtonsMenuControl/BlocButtonActionSerenity" to="ButtonsMenuControl/BlocButtonActionSerenity" method="_on_bloc_serenity_pressed" binds= ["serenity"]]
+[connection signal="pressed" from="ShowBeeActionsButton" to="." method="_on_show_bee_actions_button_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ofhbaptnkum3"]
+
+[ext_resource type="Texture2D" uid="uid://c0vg3t82fq0gg" path="res://assets/bees/lgbtqiap_ss.png" id="1_e70hc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki20q"]
+atlas = ExtResource("1_e70hc")
+region = Rect2(0, 0, 151, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx5w2"]
+atlas = ExtResource("1_e70hc")
+region = Rect2(151, 0, 151, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3invq"]
+atlas = ExtResource("1_e70hc")
+region = Rect2(302, 0, 151, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbx10"]
+atlas = ExtResource("1_e70hc")
+region = Rect2(453, 0, 151, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfb20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki20q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx5w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3invq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbx10")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 8.0
+}]
+
+[node name="FlyingBee" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mfb20")
+animation = &"flying"
+frame_progress = 0.886509

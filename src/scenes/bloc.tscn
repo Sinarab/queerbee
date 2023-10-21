@@ -1,49 +1,88 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1o48cssgwhvc"]
+[gd_scene load_steps=4 format=3 uid="uid://b1o48cssgwhvc"]
 
 [ext_resource type="Script" path="res://src/scenes/bloc_controller.gd" id="1_kwvg8"]
 [ext_resource type="Texture2D" uid="uid://b5gj757rhxnjm" path="res://assets/blocs/bloco_verde.png" id="2_10agl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v77hu"]
+size = Vector2(10, 5)
+
 [node name="Bloc" type="Node2D"]
 script = ExtResource("1_kwvg8")
-
-[node name="BlocMenu" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 20.0
-offset_top = -86.0
-offset_right = 58.0
-offset_bottom = -50.0
-
-[node name="EraseBlocButton" type="Button" parent="BlocMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -15.5
-offset_right = 16.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = " X "
 
 [node name="BlocSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_10agl")
 
 [node name="BlocArea2D" type="Area2D" parent="."]
 position = Vector2(0, -35)
-collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlocArea2D"]
 position = Vector2(-3, 5)
 polygon = PackedVector2Array(-26, -18, 32, -18, 54, 22, 54, 38, 32, 78, -26, 78, -48, 38, -48, 22)
 
-[connection signal="button_up" from="BlocMenu/EraseBlocButton" to="." method="_on_erase_bloc_button_button_up"]
-[connection signal="area_entered" from="BlocArea2D" to="." method="_on_bloc_area_2d_area_entered"]
-[connection signal="area_exited" from="BlocArea2D" to="." method="_on_bloc_area_2d_area_exited"]
+[node name="SArea2D" type="Area2D" parent="."]
+
+[node name="SCollision" type="CollisionShape2D" parent="SArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_v77hu")
+
+[node name="SRArea2D" type="Area2D" parent="."]
+
+[node name="SRCollision" type="CollisionShape2D" parent="SRArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(46, -23)
+rotation = 1.0821
+shape = SubResource("RectangleShape2D_v77hu")
+
+[node name="SLArea2D" type="Area2D" parent="."]
+
+[node name="SLCollision" type="CollisionShape2D" parent="SLArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-46, -23)
+rotation = -1.06465
+shape = SubResource("RectangleShape2D_v77hu")
+
+[node name="ILArea2D" type="Area2D" parent="."]
+
+[node name="ILCollision" type="CollisionShape2D" parent="ILArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-44, 27)
+rotation = -2.07694
+shape = SubResource("RectangleShape2D_v77hu")
+
+[node name="IRArea2D" type="Area2D" parent="."]
+
+[node name="IRCollision" type="CollisionShape2D" parent="IRArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(46, 23)
+rotation = 2.07694
+shape = SubResource("RectangleShape2D_v77hu")
+
+[node name="IArea2D" type="Area2D" parent="."]
+
+[node name="ICollision" type="CollisionShape2D" parent="IArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(0, 51)
+shape = SubResource("RectangleShape2D_v77hu")
+
 [connection signal="mouse_entered" from="BlocArea2D" to="." method="_on_bloc_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="BlocArea2D" to="." method="_on_bloc_area_2d_mouse_exited"]
+[connection signal="area_entered" from="SArea2D" to="." method="_on_s_area_2d_area_entered"]
+[connection signal="area_exited" from="SArea2D" to="." method="_on_s_area_2d_area_exited"]
+[connection signal="area_entered" from="SRArea2D" to="." method="_on_sr_area_2d_area_entered"]
+[connection signal="area_exited" from="SRArea2D" to="." method="_on_sr_area_2d_area_exited"]
+[connection signal="area_entered" from="SLArea2D" to="." method="_on_sl_area_2d_area_entered"]
+[connection signal="area_exited" from="SLArea2D" to="." method="_on_sl_area_2d_area_exited"]
+[connection signal="area_entered" from="ILArea2D" to="." method="_on_il_area_2d_area_entered"]
+[connection signal="area_exited" from="ILArea2D" to="." method="_on_il_area_2d_area_exited"]
+[connection signal="area_entered" from="IRArea2D" to="." method="_on_ir_area_2d_area_entered"]
+[connection signal="area_exited" from="IRArea2D" to="." method="_on_ir_area_2d_area_exited"]
+[connection signal="area_entered" from="IArea2D" to="." method="_on_i_area_2d_area_entered"]
+[connection signal="area_exited" from="IArea2D" to="." method="_on_i_area_2d_area_exited"]

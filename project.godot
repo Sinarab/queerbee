@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="QueerBee"
-run/main_scene="res://src/levels/main_level.tscn"
+run/main_scene="res://src/levels/main_screen.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -22,6 +22,14 @@ PlayerData="*res://src/autoload/player_data.tscn"
 [display]
 
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_render/layer_1="free"
+2d_render/layer_2="blocked"
+2d_render/layer_3="rocks"
+2d_render/layer_4="general"
+2d_render/layer_5="labels"
 
 [rendering]
 

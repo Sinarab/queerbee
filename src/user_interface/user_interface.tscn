@@ -13,6 +13,31 @@ grow_vertical = 2
 theme = ExtResource("1_l0vu2")
 script = ExtResource("2_anua5")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -211.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.729412, 0.509804, 0.137255, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.631373, 0.439216, 0.109804, 1)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -81,27 +106,6 @@ text = "%s"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BeeLifeLabel1" type="Label" parent="."]
-layout_mode = 2
-offset_left = 978.0
-offset_top = 246.0
-offset_right = 1021.0
-offset_bottom = 279.0
-grow_horizontal = 2
-size_flags_vertical = 3
-text = "%s"
-vertical_alignment = 1
-
-[node name="BeeLifeLabel2" type="Label" parent="."]
-layout_mode = 2
-offset_left = 981.0
-offset_top = 345.0
-offset_right = 1028.0
-offset_bottom = 378.0
-size_flags_vertical = 3
-text = "%s"
-vertical_alignment = 1
-
 [node name="SpiderTimerProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -128,34 +132,40 @@ offset_bottom = 589.0
 grow_horizontal = 2
 show_percentage = false
 
-[node name="ShowBeeActionsMenu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1022.0
-offset_top = 243.0
-offset_right = 1138.0
-offset_bottom = 283.0
-text = "rainbow"
-
-[node name="ActionMenu" type="Control" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 visible = false
-visibility_layer = 2
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 11
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -411.0
-offset_top = -154.0
+offset_left = -194.0
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="ActionsSelectionButton" type="OptionButton" parent="ActionMenu"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 39.0
-offset_right = 347.0
-offset_bottom = 110.0
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[connection signal="pressed" from="ShowBeeActionsMenu" to="." method="_on_show_bee_actions_menu_pressed" binds= ["rainbow"]]
-[connection signal="item_selected" from="ActionMenu/ActionsSelectionButton" to="." method="_on_actions_selection_button_item_selected"]
+[node name="BeeLifeLabel1" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "%s"
+vertical_alignment = 1
+
+[node name="BeeLifeLabel2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "%s"
+vertical_alignment = 1
+
+[node name="ShowBeeActionsMenu" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "rainbow"
+
+[node name="ActionsSelectionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/ShowBeeActionsMenu" to="." method="_on_show_bee_actions_menu_pressed" binds= ["rainbow"]]
+[connection signal="item_selected" from="ScrollContainer/VBoxContainer/ActionsSelectionButton" to="." method="_on_actions_selection_button_item_selected"]

@@ -1,9 +1,11 @@
-res://assets/theme
 res://src/levels
+res://assets/blocs
+res://src/scripts
+res://assets/theme
 res://src/user_interface
+res://assets/bees
+res://assets/atlas
 res://src/scenes
 res://src/tile_map
-res://assets/blocs
 res://src/autoload
-res://src/screens
 res://assets

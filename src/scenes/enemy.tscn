@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://m4s8wnemo54j"]
+
+[ext_resource type="Script" path="res://src/scenes/enemy_controller.gd" id="1_rtixs"]
+[ext_resource type="Texture2D" uid="uid://ctp3xorwxdrwr" path="res://assets/blocs/bloco_aranha.png" id="2_jn2j0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqpn8"]
+size = Vector2(10, 5)
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_rtixs")
+
+[node name="BlocSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_jn2j0")
+
+[node name="BlocArea2D" type="Area2D" parent="."]
+position = Vector2(0, -35)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BlocArea2D"]
+position = Vector2(-3, 5)
+polygon = PackedVector2Array(-26, -18, 32, -18, 54, 22, 54, 38, 32, 78, -26, 78, -48, 38, -48, 22)
+
+[node name="SArea2D" type="Area2D" parent="."]
+
+[node name="SCollision" type="CollisionShape2D" parent="SArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_lqpn8")
+
+[node name="SRArea2D" type="Area2D" parent="."]
+
+[node name="SRCollision" type="CollisionShape2D" parent="SRArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(46, -23)
+rotation = 1.0821
+shape = SubResource("RectangleShape2D_lqpn8")
+
+[node name="SLArea2D" type="Area2D" parent="."]
+
+[node name="SLCollision" type="CollisionShape2D" parent="SLArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-46, -23)
+rotation = -1.06465
+shape = SubResource("RectangleShape2D_lqpn8")
+
+[node name="ILArea2D" type="Area2D" parent="."]
+
+[node name="ILCollision" type="CollisionShape2D" parent="ILArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-44, 27)
+rotation = -2.07694
+shape = SubResource("RectangleShape2D_lqpn8")
+
+[node name="IRArea2D" type="Area2D" parent="."]
+
+[node name="IRCollision" type="CollisionShape2D" parent="IRArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(46, 23)
+rotation = 2.07694
+shape = SubResource("RectangleShape2D_lqpn8")
+
+[node name="IArea2D" type="Area2D" parent="."]
+
+[node name="ICollision" type="CollisionShape2D" parent="IArea2D"]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(0, 51)
+shape = SubResource("RectangleShape2D_lqpn8")
+
+[connection signal="area_entered" from="BlocArea2D" to="." method="_on_bloc_area_2d_area_entered"]
+[connection signal="area_exited" from="BlocArea2D" to="." method="_on_bloc_area_2d_area_exited"]
+[connection signal="input_event" from="BlocArea2D" to="." method="_on_bloc_area_2d_input_event"]
+[connection signal="mouse_entered" from="BlocArea2D" to="." method="_on_bloc_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="BlocArea2D" to="." method="_on_bloc_area_2d_mouse_exited"]

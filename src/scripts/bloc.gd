@@ -25,11 +25,11 @@ static func create_new_bloc(_type: String):
 	bloc.connections = 0
 	return bloc
 
-static func get_hability_by_type(type: String) -> Array[String]:
-	if type == "life": return ["none"]
-	elif type == "healing": return ["none"]
-	elif type == "the_sun": return ["none"]
-	elif type == "nature": return ["none"]
-	elif type == "serenity": return ["none"]
-	elif type == "the_sprit": return ["none"]
+static func get_hability_by_type(_type: String) -> Array[String]:
+	if _type == "life": return ["none"]
+	elif _type == "healing": return ["none"]
+	elif _type == "the_sun": return ["none"]
+	elif _type == "nature": return ["none"]
+	elif _type == "serenity": return ["none"]
+	elif _type == "the_sprit": return ["none"]
 	else: return ["none"]

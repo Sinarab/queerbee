@@ -1,11 +1,24 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bheuenbl3wl31"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bheuenbl3wl31"]
 
 [ext_resource type="FontFile" uid="uid://bo0k8ddamdco5" path="res://assets/fonts/rainyhearts.ttf" id="1_nu65t"]
-[ext_resource type="StyleBox" uid="uid://cid5cdw7v4f2j" path="res://assets/theme/button_style_box_empty.tres" id="1_u05vo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x6h3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5moj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfj1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgglo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmrps"]
 
 [resource]
 default_font = ExtResource("1_nu65t")
 default_font_size = 24
 Button/font_sizes/font_size = 28
-Button/styles/normal = ExtResource("1_u05vo")
+Button/styles/disabled = SubResource("StyleBoxEmpty_5x6h3")
+Button/styles/focus = SubResource("StyleBoxEmpty_l5moj")
+Button/styles/hover = SubResource("StyleBoxEmpty_hfj1l")
+Button/styles/normal = SubResource("StyleBoxEmpty_xgglo")
+Button/styles/pressed = SubResource("StyleBoxEmpty_hmrps")
 Label/font_sizes/font_size = 32

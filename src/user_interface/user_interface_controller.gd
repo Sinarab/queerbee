@@ -6,8 +6,8 @@ extends Control
 @onready var resource_label: Label = get_node("ResourceLabel")
 #BEES
 @onready var bees_label: Label = get_node("BeesLabel")
-@onready var bee_life_label1: Label = get_node("BeeLifeLabel1")
-@onready var bee_life_label2: Label = get_node("BeeLifeLabel2")
+@onready var bee_life_label1: Label = $ScrollContainer/VBoxContainer/BeeLifeLabel1
+@onready var bee_life_label2: Label = $ScrollContainer/VBoxContainer/BeeLifeLabel2
 #UNION
 @onready var union_label: Label = get_node("UnionLabel")
 @onready var unio_progress_bar: ProgressBar = get_node("UnioProgressBar")
@@ -15,7 +15,6 @@ extends Control
 @onready var spider_timer_label: Label = get_node("SpiderTimerLabel")
 @onready var spider_timer_progress_bar: ProgressBar = get_node("SpiderTimerProgressBar")
 
-const bloc_enabled = preload("res://assets/blocs/bloco01.png")
 const bloc_the_sun = preload("res://assets/blocs/bloco_amarelo.png") # -1
 const bloc_serenity = preload("res://assets/blocs/bloco_azul.png") # 0
 const bloc_healing = preload("res://assets/blocs/bloco_laranja.png") # 1
@@ -52,12 +51,11 @@ func update_interface_enemies() -> void:
 
 
 func _on_show_bee_actions_menu_pressed(bee_type):
-	var action_menu: Control = get_node("ActionMenu")
-	action_menu.visible = not action_menu.visible
+	var actions_select: OptionButton = $ScrollContainer/VBoxContainer/ActionsSelectionButton
+	actions_select.visible = not actions_select.visible
 
-	if action_menu.visible:
+	if actions_select.visible:
 		if bee_type == "rainbow":
-			var actions_select: OptionButton = get_node("ActionMenu/ActionsSelectionButton")
 			actions_select.add_icon_item(bloc_the_sun, "The sun", -1)
 			actions_select.add_icon_item(bloc_serenity, "Serenity", 0)
 			actions_select.add_icon_item(bloc_healing, "Healing", 1)
@@ -65,24 +63,26 @@ func _on_show_bee_actions_menu_pressed(bee_type):
 			actions_select.add_icon_item(bloc_nature, "Nature", 3)
 			actions_select.add_icon_item(bloc_life, "Life", 4)
 
+#remove this
 func _on_actions_selection_button_item_selected(index):
-	var actions_select: OptionButton = get_node("ActionMenu/ActionsSelectionButton")
-	var item_id = actions_select.get_item_id(index)
-	if item_id == -1:
-		var bloc = Bloc.create_new_bloc("the_sun")
-		PlayerData.add_bloc(bloc)
-	if item_id == 0:
-		var bloc = Bloc.create_new_bloc("serenity")
-		PlayerData.add_bloc(bloc)
-	if item_id == 1:
-		var bloc = Bloc.create_new_bloc("healing")
-		PlayerData.add_bloc(bloc)
-	if item_id == 2:
-		var bloc = Bloc.create_new_bloc("the_sprit")
-		PlayerData.add_bloc(bloc)
-	if item_id == 3:
-		var bloc = Bloc.create_new_bloc("nature")
-		PlayerData.add_bloc(bloc)
-	if item_id == 4:
-		var bloc = Bloc.create_new_bloc("life")
-		PlayerData.add_bloc(bloc)
+	pass
+#	var actions_select: OptionButton = $ScrollContainer/VBoxContainer/ActionsSelectionButton
+#	var item_id = actions_select.get_item_id(index)
+#	if item_id == -1:
+#		var bloc = Bloc.create_new_bloc("the_sun")
+#		PlayerData.add_bloc(bloc)
+#	if item_id == 0:
+#		var bloc = Bloc.create_new_bloc("serenity")
+#		PlayerData.add_bloc(bloc)
+#	if item_id == 1:
+#		var bloc = Bloc.create_new_bloc("healing")
+#		PlayerData.add_bloc(bloc)
+#	if item_id == 2:
+#		var bloc = Bloc.create_new_bloc("the_sprit")
+#		PlayerData.add_bloc(bloc)
+#	if item_id == 3:
+#		var bloc = Bloc.create_new_bloc("nature")
+#		PlayerData.add_bloc(bloc)
+#	if item_id == 4:
+#		var bloc = Bloc.create_new_bloc("life")
+#		PlayerData.add_bloc(bloc)
